@@ -22,24 +22,24 @@ class MusicHandler extends StatelessWidget {
             ),
             child: Row(
               children: <Widget>[
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                    boxShadow: [
-                      new BoxShadow(
-                        color: Colors.black.withOpacity(0.4),
-                        offset: new Offset(1.0, 1.0),
-                        spreadRadius: 1.0,
-                        blurRadius: 2.0,
-                      )
-                    ],
-                  ),
-                  child: Hero(
-                    tag: "DemoTag",
+                Hero(
+                  tag: 'ActiveSongImageThumb',
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                      boxShadow: [
+                        new BoxShadow(
+                          color: Colors.black.withOpacity(0.4),
+                          offset: new Offset(1.0, 1.0),
+                          spreadRadius: 1.0,
+                          blurRadius: 2.0,
+                        )
+                      ],
+                    ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.all(Radius.circular(6.0)),
                       child: Image(
-                          image: NetworkImage('https://img.wynk.in/unsafe/90x90/filters:no_upscale():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/1566875956/srch_zeemusic_INZ031406006.jpg'),
+                          image: NetworkImage('https://img.wynk.in/unsafe/275x275/filters:no_upscale():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/Romance-top-50-english-300x300.png'),
                           width: 40,
                           height: 40
                       ),

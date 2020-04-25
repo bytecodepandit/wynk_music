@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wynk_music/modules/dashboard/home/widgets/carousel.dart';
 import 'package:wynk_music/modules/dashboard/home/widgets/cartegory_song_list.dart';
 import 'package:wynk_music/modules/dashboard/home/widgets/category_album_list.dart';
-
+import 'package:marquee/marquee.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
