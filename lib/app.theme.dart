@@ -5,7 +5,7 @@ class AppTheme {
   final ThemeData theme = ThemeData(
     // Define the default brightness and colors.
     brightness: Brightness.light,
-    primaryColor: Color(0XFF2dbdc2),
+    primaryColor: Color(0XFFfc3318),
     accentColor: Color(0XFFfd6660),
 
     // text colors

@@ -5,11 +5,11 @@ import 'package:wynk_music/app.theme.dart';
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    FlutterStatusbarcolor.setStatusBarColor(Color(0XFF2dbdc2));
+    FlutterStatusbarcolor.setStatusBarColor(Color(0XFFfc3318));
     return MaterialApp(
       // set your initial route
       theme: AppTheme().theme,
-      initialRoute: "/",
+      initialRoute: "/dashboard",
       // add Modular to manage the routing system
       onGenerateRoute: Modular.generateRoute,
     );
