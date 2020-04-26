@@ -5,6 +5,9 @@ import 'package:wynk_music/modules/dashboard/my_account/my_account.widget.dart';
 import 'package:wynk_music/modules/dashboard/my_music/my_music.widget.dart';
 import 'package:wynk_music/modules/dashboard/updates/update.widget.dart';
 import 'package:wynk_music/modules/dashboard/radio/radio.widget.dart';
+import 'package:wynk_music/modules/dashboard/album_playlist/album_playlist.dart';
+import 'package:wynk_music/modules/dashboard/widgets/app_bar.dart';
+
 
 
 class Dashboard extends StatefulWidget {
@@ -14,10 +17,13 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
+  int _selectedIndex1 = 0;
+
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      _selectedIndex1 = index == 4 ? 6 : index;
     });
   }
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -27,28 +33,14 @@ class _DashboardState extends State<Dashboard> {
     MyMusic(),
     MyRadio(),
     Updates(),
-    MyAccount()
+    MyAccount(),
+    AlbumPlayList(),
+    AlbumPlayList()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(
-          Icons.music_note
-        ),
-        title: Text('Home'),
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                  Icons.search,
-                color: Colors.white
-              ),
-            )
-          ],
-      ),
       body: Container(
         width:(MediaQuery.of(context).size.width),
         child: Stack(
@@ -57,7 +49,7 @@ class _DashboardState extends State<Dashboard> {
              children: <Widget>[
                Expanded(
                  child: SingleChildScrollView(
-                   child: _widgetOptions.elementAt(_selectedIndex),
+                   child:_widgetOptions.elementAt(_selectedIndex1),
                  ),
                )
              ],

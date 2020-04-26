@@ -1,10 +1,29 @@
 import 'package:flutter/material.dart';
-
 class Updates extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('my updates'),
+    return  Container(
+        color: Colors.white,
+        padding: EdgeInsets.only(top: 10, bottom: 70),
+        child: Column(
+            children: <Widget>[
+              AppBar(
+                leading: Icon(
+                    Icons.music_note
+                ),
+                title: Text('Updates'),
+                centerTitle: true,
+                automaticallyImplyLeading: false,
+                actions: <Widget>[
+                  IconButton(
+                    icon: Icon(
+                        Icons.search,
+                        color: Colors.white
+                    ),
+                  )
+                ],
+              )
+            ])
     );
   }
 }
