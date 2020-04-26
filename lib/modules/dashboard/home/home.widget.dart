@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:wynk_music/modules/dashboard/home/widgets/carousel.dart';
-import 'package:wynk_music/modules/dashboard/home/widgets/cartegory_song_list.dart';
-import 'package:wynk_music/modules/dashboard/home/widgets/category_album_list.dart';
-import 'package:marquee/marquee.dart';
+import 'package:wynk_music/share/carousel.dart';
+import 'package:wynk_music/share/cartegory_song_list.dart';
+import 'package:wynk_music/share/category_album_list.dart';
+import 'package:wynk_music/share/artist_list.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,9 @@ class Home extends StatelessWidget {
           SizedBox(height: 25),
           CategoryAlbumList(title: 'Top Charts'),
           SizedBox(height: 25),
-          CategoryAlbumList(title: 'Top Playlist')
+          CategoryAlbumList(title: 'Top Playlist'),
+          SizedBox(height: 25),
+          ArtistList(title: 'Recommended Artists')
         ],
       ),
     );
