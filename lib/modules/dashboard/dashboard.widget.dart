@@ -6,7 +6,6 @@ import 'package:wynk_music/modules/dashboard/my_music/my_music.widget.dart';
 import 'package:wynk_music/modules/dashboard/updates/update.widget.dart';
 import 'package:wynk_music/modules/dashboard/radio/radio.widget.dart';
 import 'package:wynk_music/modules/dashboard/album_playlist/album_playlist.dart';
-import 'package:wynk_music/modules/dashboard/widgets/app_bar.dart';
 
 
 

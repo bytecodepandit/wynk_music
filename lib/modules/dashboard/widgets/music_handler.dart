@@ -62,6 +62,7 @@ class MusicHandler extends StatelessWidget {
                 SizedBox(
                   width: 30,
                   child: IconButton(
+                    onPressed: () {},
                     icon: Icon(
                       Icons.pause_circle_filled,
                       color: Theme.of(context).primaryColor,

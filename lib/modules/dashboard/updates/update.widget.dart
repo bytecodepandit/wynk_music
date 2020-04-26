@@ -16,6 +16,7 @@ class Updates extends StatelessWidget {
                 automaticallyImplyLeading: false,
                 actions: <Widget>[
                   IconButton(
+                    onPressed: () {},
                     icon: Icon(
                         Icons.search,
                         color: Colors.white
