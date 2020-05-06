@@ -81,12 +81,13 @@ class CardLanguage extends StatelessWidget {
                 Text('$langName', style: TextStyle(color: Colors.white)),
                 isActive ? SizedBox(
                   height: 20,
-                  width: 20,
+                  width: 15,
                   child: IconButton(
                     padding: EdgeInsets.all(0.0),
                     icon: Icon(
                       Icons.check,
                       color: Colors.white,
+                      size: 16,
                     ),
                   ),
                 ): SizedBox( height: 20,
