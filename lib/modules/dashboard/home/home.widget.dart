@@ -3,7 +3,8 @@ import 'package:wynk_music/share/carousel.dart';
 import 'package:wynk_music/share/cartegory_song_list.dart';
 import 'package:wynk_music/share/category_album_list.dart';
 import 'package:wynk_music/share/artist_list.dart';
-
+import 'package:wynk_music/share/music_language.dart';
+import 'package:wynk_music/share/from_my_music.dart';
 
 
 class Home extends StatelessWidget {
@@ -24,6 +25,7 @@ class Home extends StatelessWidget {
             actions: <Widget>[
               IconButton(
                 onPressed: () {},
+                padding: EdgeInsets.all(0.0),
                 icon: Icon(
                     Icons.search,
                     color: Colors.white
@@ -45,7 +47,14 @@ class Home extends StatelessWidget {
           SizedBox(height: 25),
           CategoryAlbumList(title: 'Top Playlist'),
           SizedBox(height: 25),
-          ArtistList(title: 'Recommended Artists')
+          ArtistList(title: 'Recommended Artists'),
+          SizedBox(height: 30),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child:  FromMyMusic(),
+          ),
+          SizedBox(height: 30),
+          MusicLanguage()
         ],
       ),
     );

@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-class MusicHandler extends StatelessWidget {
+class MusicHandler extends StatefulWidget {
+  @override
+  _MusicHandlerState createState() => _MusicHandlerState();
+}
+
+class _MusicHandlerState extends State<MusicHandler> {
+  bool isPlaying = false;
+
   @override
   Widget build(BuildContext context) {
     return ClipRect(
@@ -61,11 +68,16 @@ class MusicHandler extends StatelessWidget {
                 SizedBox(width: 10),
                 SizedBox(
                   width: 30,
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.pause_circle_filled,
-                      color: Theme.of(context).primaryColor,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
+                    },
+                    child: Image(
+                      image: AssetImage('assets/images/icons/${isPlaying ? 'pause_red' : 'play_red'}.png'),
+                      width: 25,
+                      height: 25,
                     ),
                   ),
                 )
