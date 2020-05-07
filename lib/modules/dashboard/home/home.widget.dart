@@ -6,6 +6,7 @@ import 'package:wynk_music/share/artist_list.dart';
 import 'package:wynk_music/share/music_language.dart';
 import 'package:wynk_music/share/from_my_music.dart';
 import 'package:wynk_music/share/quick_settings.dart';
+import 'package:wynk_music/share/my_personal_station.dart';
 
 
 class Home extends StatelessWidget {
@@ -56,8 +57,10 @@ class Home extends StatelessWidget {
           ),
           SizedBox(height: 30),
           MusicLanguage(),
-          SizedBox(height: 30,),
-          QuickSettings()
+          SizedBox(height: 30),
+          MyPersonalStation(),
+          SizedBox(height: 30),
+          QuickSettings(),
         ],
       ),
     );

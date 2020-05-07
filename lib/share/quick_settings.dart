@@ -69,8 +69,18 @@ class _QuickSettingsState extends State<QuickSettings> {
   }
 
 
-  selectSleepTime() {
-
+  selectSleepTime(BuildContext context, bool value) {
+    DatePicker.showDateTimePicker(context,
+        showTitleActions: true,
+        onChanged: (date) {
+          print('change $date');
+        }, onConfirm: (date) {
+          print('confirm $date');
+          setState(() {
+            isSwitched = value;
+            print(isSwitched);
+          });
+        }, currentTime: DateTime.now(), locale: LocaleType.en);
   }
 
 
@@ -129,17 +139,7 @@ class _QuickSettingsState extends State<QuickSettings> {
                     child: Switch(
                       value: isSwitched,
                       onChanged: (value) {
-                        DatePicker.showDateTimePicker(context,
-                            showTitleActions: true,
-                            onChanged: (date) {
-                              print('change $date');
-                            }, onConfirm: (date) {
-                              print('confirm $date');
-                              setState(() {
-                                isSwitched = value;
-                                print(isSwitched);
-                              });
-                            }, currentTime: DateTime.now(), locale: LocaleType.en);
+                        selectSleepTime(context, value);
                       },
                       activeTrackColor: Colors.blue,
                       activeColor: Colors.white,
