@@ -220,7 +220,7 @@ class _PlayListProfileState extends State<PlayListProfile> {
                         child: Text(
                             '$artistName',
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: Colors.grey, fontSize: 16)),
+                            style: TextStyle(color: Colors.grey, fontSize: 14)),
                       )
                     ],
                   )
