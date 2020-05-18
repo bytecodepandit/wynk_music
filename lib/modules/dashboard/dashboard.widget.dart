@@ -5,7 +5,7 @@ import 'package:wynk_music/modules/dashboard/my_account/my_account.widget.dart';
 import 'package:wynk_music/modules/dashboard/my_music/my_music.widget.dart';
 import 'package:wynk_music/modules/dashboard/updates/update.widget.dart';
 import 'package:wynk_music/modules/dashboard/radio/radio.widget.dart';
-import 'package:wynk_music/modules/dashboard/album_playlist/album_playlist.dart';
+import 'package:wynk_music/modules/dashboard/play_list_profile/play_list_profile.widget.dart';
 
 
 
@@ -22,19 +22,18 @@ class _DashboardState extends State<Dashboard> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      _selectedIndex1 = index == 4 ? 6 : index;
+      _selectedIndex1 = index == 4 ? 5 : index;
     });
   }
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   static  List<Widget> _widgetOptions = <Widget>[
+    PlayListProfile(),
     Home(),
     MyMusic(),
     MyRadio(),
     Updates(),
     MyAccount(),
-    AlbumPlayList(),
-    AlbumPlayList()
   ];
 
   @override

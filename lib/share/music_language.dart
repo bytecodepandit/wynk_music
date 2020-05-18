@@ -83,6 +83,7 @@ class CardLanguage extends StatelessWidget {
                   height: 20,
                   width: 15,
                   child: IconButton(
+                    onPressed: () {},
                     padding: EdgeInsets.all(0.0),
                     icon: Icon(
                       Icons.check,
