@@ -22,7 +22,7 @@ class _MusicHandlerState extends State<MusicHandler> {
             Navigator.pushNamed(context, '/music_player');
           },
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+            padding: EdgeInsets.symmetric(vertical: 7, horizontal: 15),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(topRight: Radius.circular(10.0), topLeft: Radius.circular(8.0)),
                 color: Colors.black.withOpacity(0.6),
@@ -47,8 +47,8 @@ class _MusicHandlerState extends State<MusicHandler> {
                       borderRadius: BorderRadius.all(Radius.circular(6.0)),
                       child: Image(
                           image: NetworkImage('https://img.wynk.in/unsafe/275x275/filters:no_upscale():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/Romance-top-50-english-300x300.png'),
-                          width: 40,
-                          height: 40
+                          width: 45,
+                          height: 45
                       ),
                     ),
                   ),

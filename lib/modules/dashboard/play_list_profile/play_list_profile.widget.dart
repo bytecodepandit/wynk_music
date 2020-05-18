@@ -29,10 +29,11 @@ class _PlayListProfileState extends State<PlayListProfile> {
       child: Container(
           child: Stack(children: <Widget>[
         Container(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           child: Column(
             children: <Widget>[
+              proflieImageContainer(),
               Container(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -90,12 +91,72 @@ class _PlayListProfileState extends State<PlayListProfile> {
   }
 
   Widget proflieImageContainer() {
-    return Container();
+    return Container(
+      height: 230,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+            image: NetworkImage('https://img.wynk.in/unsafe/150x150/filters:no_upscale():format(webp)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/music/1589437562/53621539.jpg'),
+            fit: BoxFit.fill,
+        ),
+      ),
+      child: Container(
+        padding: EdgeInsets.only(top: 50),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Center(
+              child: Column(
+                children: <Widget>[
+                  Text('Wynk Top 100', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500)),
+                  SizedBox(height: 10),
+                  Text('By Wynk Music', style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400)),
+                  SizedBox(height: 15),
+                  Text('182K Followers . 100 songs', style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400)),
+                  SizedBox(height: 10),
+                  Stack(
+                    overflow: Overflow.visible,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                        width: 130,
+                        decoration: BoxDecoration(
+                          color:  Color(0XFF0088d0),
+                          borderRadius: BorderRadius.all(Radius.circular(4.0))
+                        ),
+                        child: Center(
+                          child: Text('Follow', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
+                        ),
+                      ),
+                      Positioned(
+                        left: -10,
+                        top: -2,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(Radius.circular(100))
+                          ),
+                          child: Icon(
+                            Icons.add_circle,
+                            color:  Color(0XFF0088d0),
+                            size: 30,
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   Widget songsList() {
     return Container(
-      padding: EdgeInsets.only(top: 15, bottom: 40),
+      padding: EdgeInsets.only(bottom: 60, left: 15, right: 15),
       child: Column(
         children: songList.length > 0 ? songList.map((song) => songListItem(song.thumbnailUrl, song.songName, song.artistName, song.isNewSong)).toList() : <Widget>[Text('No songs')],
       ),
@@ -118,8 +179,8 @@ class _PlayListProfileState extends State<PlayListProfile> {
               borderRadius: BorderRadius.all(Radius.circular(3.0)),
               child: Image(
                 image: NetworkImage('$thumbnailUrl'),
-                width: 60,
-                height: 60,
+                width: 50,
+                height: 50,
                 fit: BoxFit.fill,
               ),
             ),
@@ -133,7 +194,7 @@ class _PlayListProfileState extends State<PlayListProfile> {
                   Row(
                     children: <Widget>[
                       Flexible(
-                        child: Text('$songName', overflow: TextOverflow.ellipsis, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18)),
+                        child: Text('$songName', overflow: TextOverflow.ellipsis, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 16)),
                       )
                     ],
                   ),
@@ -146,14 +207,14 @@ class _PlayListProfileState extends State<PlayListProfile> {
                           borderRadius: BorderRadius.all(Radius.circular(4.0))
                         ),
                         padding: EdgeInsets.symmetric(vertical: 1, horizontal: 5),
-                        child: Text('Added', style: TextStyle(color: Colors.white, )),
+                        child: Text('ADDED', style: TextStyle(color: Colors.white, fontSize: 12)),
                       ): SizedBox(),
                       SizedBox(width: isNewSong ? 15 : 0),
                       Flexible(
                         child: Text(
                             '$artistName',
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(color: Colors.grey, fontSize: 18)),
+                            style: TextStyle(color: Colors.grey, fontSize: 16)),
                       )
                     ],
                   )
