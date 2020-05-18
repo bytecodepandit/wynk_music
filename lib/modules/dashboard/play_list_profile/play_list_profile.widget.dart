@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:wynk_music/share/artist_list.dart';
+import 'package:wynk_music/share/category_album_list.dart';
 
 class PlayListProfile extends StatefulWidget {
   @override
@@ -82,7 +84,11 @@ class _PlayListProfileState extends State<PlayListProfile> {
                   ],
                 ),
               ),
-              songsList()
+              songsList(),
+              ArtistList(title: 'Artists Featured in this Playlist'),
+              SizedBox(height: 25),
+              CategoryAlbumList(title: 'Similar Playlist'),
+              SizedBox(height: 70),
             ],
           ),
         )
@@ -156,7 +162,7 @@ class _PlayListProfileState extends State<PlayListProfile> {
 
   Widget songsList() {
     return Container(
-      padding: EdgeInsets.only(bottom: 60, left: 15, right: 15),
+      padding: EdgeInsets.only(bottom: 15, left: 15, right: 15),
       child: Column(
         children: songList.length > 0 ? songList.map((song) => songListItem(song.thumbnailUrl, song.songName, song.artistName, song.isNewSong)).toList() : <Widget>[Text('No songs')],
       ),
