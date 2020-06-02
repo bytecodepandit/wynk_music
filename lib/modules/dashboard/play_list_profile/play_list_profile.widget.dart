@@ -30,68 +30,68 @@ class _PlayListProfileState extends State<PlayListProfile> {
     return SafeArea(
       child: Container(
           child: Stack(children: <Widget>[
-        Container(
-          child: Column(
-            children: <Widget>[
-              proflieImageContainer(),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Expanded(
-                      child: RaisedButton(
-                        padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 30),
-                        shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(6.0)),                        color: Colors.white,
-                        onPressed: () {},
-                        elevation: 3.0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(
-                              EvilIcons.arrow_down,
-                              color: Color(0XFF1b9dcb),
-                              size: 35,
-                            ),
-                            SizedBox(width: 10),
-                            Text('Download All', style: TextStyle(color: Color(0XFF1b9dcb), fontSize: 16))
-                          ],
+          Container(
+            child: Column(
+              children: <Widget>[
+                proflieImageContainer(),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 30),
+                          shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(6.0)),                        color: Colors.white,
+                          onPressed: () {},
+                          elevation: 3.0,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(
+                                EvilIcons.arrow_down,
+                                color: Color(0XFF1b9dcb),
+                                size: 35,
+                              ),
+                              SizedBox(width: 10),
+                              Text('Download All', style: TextStyle(color: Color(0XFF1b9dcb), fontSize: 16))
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: 15),
-                    Expanded(
-                      child: RaisedButton(
-                        padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 30),
-                        shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(6.0)),
-                        color: Colors.white,
-                        onPressed: () {},
-                        elevation: 3.0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Icon(
-                              EvilIcons.play,
-                              color: Color(0XFF1b9dcb),
-                              size: 35,
-                            ),
-                            SizedBox(width: 10),
-                            Text('Play All', style: TextStyle(color: Color(0XFF1b9dcb), fontSize: 16))
-                          ],
+                      SizedBox(width: 15),
+                      Expanded(
+                        child: RaisedButton(
+                          padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 30),
+                          shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(6.0)),
+                          color: Colors.white,
+                          onPressed: () {},
+                          elevation: 3.0,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(
+                                EvilIcons.play,
+                                color: Color(0XFF1b9dcb),
+                                size: 35,
+                              ),
+                              SizedBox(width: 10),
+                              Text('Play All', style: TextStyle(color: Color(0XFF1b9dcb), fontSize: 16))
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              songsList(),
-              ArtistList(title: 'Artists Featured in this Playlist'),
-              SizedBox(height: 25),
-              CategoryAlbumList(title: 'Similar Playlist'),
-              SizedBox(height: 70),
-            ],
-          ),
-        )
+                songsList(),
+                ArtistList(title: 'Artists Featured in this Playlist'),
+                SizedBox(height: 25),
+                CategoryAlbumList(title: 'Similar Playlist'),
+                SizedBox(height: 70),
+              ],
+            ),
+          )
       ])),
     );
   }
@@ -106,55 +106,98 @@ class _PlayListProfileState extends State<PlayListProfile> {
         ),
       ),
       child: Container(
-        padding: EdgeInsets.only(top: 50),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: <Widget>[
-            Center(
-              child: Column(
-                children: <Widget>[
-                  Text('Wynk Top 100', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500)),
-                  SizedBox(height: 10),
-                  Text('By Wynk Music', style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400)),
-                  SizedBox(height: 15),
-                  Text('182K Followers . 100 songs', style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400)),
-                  SizedBox(height: 10),
-                  Stack(
-                    overflow: Overflow.visible,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                        width: 130,
-                        decoration: BoxDecoration(
-                          color:  Color(0XFF0088d0),
-                          borderRadius: BorderRadius.all(Radius.circular(4.0))
-                        ),
-                        child: Center(
-                          child: Text('Follow', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
-                        ),
-                      ),
-                      Positioned(
-                        left: -10,
-                        top: -2,
-                        child: Container(
+           Positioned(
+             top: 0,
+             left: 0,
+             right: 0,
+             child: Container(
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: <Widget>[
+                   IconButton(
+                     icon: Icon(
+                       Icons.arrow_back_ios,
+                       color: Colors.white
+                     ),
+                   ),
+                   Row(
+                     children: <Widget>[
+                       IconButton(
+                         icon: Icon(
+                             Icons.search,
+                             color: Colors.white
+                         ),
+                       ),
+                       IconButton(
+                         icon: Icon(
+                             Entypo.forward,
+                             color: Colors.white
+                         ),
+                       ),
+                       IconButton(
+                         icon: Icon(
+                             Icons.more_vert,
+                             color: Colors.white
+                         ),
+                       ),
+                     ],
+                   )
+                 ],
+               )
+             )
+           ),
+            Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: Column(
+                  children: <Widget>[
+                    Text('Wynk Top 100', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500)),
+                    SizedBox(height: 10),
+                    Text('By Wynk Music', style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400)),
+                    SizedBox(height: 15),
+                    Text('182K Followers . 100 songs', style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400)),
+                    SizedBox(height: 10),
+                    Stack(
+                      overflow: Overflow.visible,
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                          width: 130,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(100))
-                          ),
-                          child: Icon(
-                            Icons.add_circle,
                             color:  Color(0XFF0088d0),
-                            size: 30,
+                            borderRadius: BorderRadius.all(Radius.circular(4.0))
+                          ),
+                          child: Center(
+                            child: Text('Follow', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
                           ),
                         ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            )
-          ],
+                        Positioned(
+                          left: -10,
+                          top: -2,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(Radius.circular(100))
+                            ),
+                            child: Icon(
+                              Icons.add_circle,
+                              color:  Color(0XFF0088d0),
+                              size: 30,
+                            ),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+          ]
         ),
       ),
     );
