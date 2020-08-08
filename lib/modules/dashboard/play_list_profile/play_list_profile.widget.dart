@@ -28,71 +28,73 @@ class _PlayListProfileState extends State<PlayListProfile> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
-          child: Stack(children: <Widget>[
-          Container(
-            child: Column(
-              children: <Widget>[
-                proflieImageContainer(),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Expanded(
-                        child: RaisedButton(
-                          padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 30),
-                          shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(6.0)),                        color: Colors.white,
-                          onPressed: () {},
-                          elevation: 3.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Icon(
-                                EvilIcons.arrow_down,
-                                color: Color(0XFF1b9dcb),
-                                size: 35,
-                              ),
-                              SizedBox(width: 10),
-                              Text('Download All', style: TextStyle(color: Color(0XFF1b9dcb), fontSize: 16))
-                            ],
+      child: SingleChildScrollView(
+        child: Container(
+            child: Stack(children: <Widget>[
+            Container(
+              child: Column(
+                children: <Widget>[
+                  proflieImageContainer(),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Expanded(
+                          child: RaisedButton(
+                            padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 30),
+                            shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(6.0)),                        color: Colors.white,
+                            onPressed: () {},
+                            elevation: 3.0,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  EvilIcons.arrow_down,
+                                  color: Color(0XFF1b9dcb),
+                                  size: 35,
+                                ),
+                                SizedBox(width: 10),
+                                Text('Download All', style: TextStyle(color: Color(0XFF1b9dcb), fontSize: 16))
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 15),
-                      Expanded(
-                        child: RaisedButton(
-                          padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 30),
-                          shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(6.0)),
-                          color: Colors.white,
-                          onPressed: () {},
-                          elevation: 3.0,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Icon(
-                                EvilIcons.play,
-                                color: Color(0XFF1b9dcb),
-                                size: 35,
-                              ),
-                              SizedBox(width: 10),
-                              Text('Play All', style: TextStyle(color: Color(0XFF1b9dcb), fontSize: 16))
-                            ],
+                        SizedBox(width: 15),
+                        Expanded(
+                          child: RaisedButton(
+                            padding: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 30),
+                            shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(6.0)),
+                            color: Colors.white,
+                            onPressed: () {},
+                            elevation: 3.0,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Icon(
+                                  EvilIcons.play,
+                                  color: Color(0XFF1b9dcb),
+                                  size: 35,
+                                ),
+                                SizedBox(width: 10),
+                                Text('Play All', style: TextStyle(color: Color(0XFF1b9dcb), fontSize: 16))
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                songsList(),
-                ArtistList(title: 'Artists Featured in this Playlist'),
-                SizedBox(height: 25),
-                CategoryAlbumList(title: 'Similar Playlist'),
-                SizedBox(height: 70),
-              ],
-            ),
-          )
-      ])),
+                  songsList(),
+                  ArtistList(title: 'Artists Featured in this Playlist'),
+                  SizedBox(height: 25),
+                  CategoryAlbumList(title: 'Similar Playlist'),
+                  SizedBox(height: 70),
+                ],
+              ),
+            )
+        ])),
+      ),
     );
   }
 
@@ -117,6 +119,9 @@ class _PlayListProfileState extends State<PlayListProfile> {
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: <Widget>[
                    IconButton(
+                     onPressed: () {
+                       Navigator.pop(context);
+                     },
                      icon: Icon(
                        Icons.arrow_back_ios,
                        color: Colors.white
@@ -218,19 +223,24 @@ class _PlayListProfileState extends State<PlayListProfile> {
       padding: EdgeInsets.symmetric(vertical: 7.5),
       child: Row(
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey[100], width: 1.0, style: BorderStyle.solid),
-              borderRadius: BorderRadius.all(Radius.circular(3.0)),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(3.0)),
-              child: Image(
-                image: NetworkImage('$thumbnailUrl'),
-                width: 50,
-                height: 50,
-                fit: BoxFit.fill,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/music_player');
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.grey[100], width: 1.0, style: BorderStyle.solid),
+                borderRadius: BorderRadius.all(Radius.circular(3.0)),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                child: Image(
+                  image: NetworkImage('$thumbnailUrl'),
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),

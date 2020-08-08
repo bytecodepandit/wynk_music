@@ -28,12 +28,12 @@ class _DashboardState extends State<Dashboard> {
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   static  List<Widget> _widgetOptions = <Widget>[
-    PlayListProfile(),
     Home(),
     MyMusic(),
     MyRadio(),
     Updates(),
     MyAccount(),
+    PlayListProfile(),
   ];
 
   @override

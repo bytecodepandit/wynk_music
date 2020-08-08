@@ -1,6 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:wynk_music/modules/dashboard/play_list_profile/play_list_profile.widget.dart';
 
 class CategoryAlbumList extends StatelessWidget {
+
+  showPlayListProfile(BuildContext context) {
+    showGeneralDialog(
+        context: context,
+        barrierDismissible: true,
+        barrierLabel:
+        MaterialLocalizations.of(context).modalBarrierDismissLabel,
+        barrierColor: Colors.black45,
+        transitionDuration: const Duration(milliseconds: 100),
+        pageBuilder: (BuildContext buildContext, Animation animation,
+            Animation secondaryAnimation) {
+          return Material(
+            child: PlayListProfile(),
+          );
+        });
+  }
+
+
+
   final String title;
   final List<CardAlbum> songList = [
     CardAlbum(
@@ -69,7 +89,12 @@ class CategoryAlbumList extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: songList.map((elem) => elem).toList(),
+              children: songList.map((elem) => GestureDetector(
+                onTap: () {
+                  showPlayListProfile(context);
+                },
+                child: elem,
+              )).toList(),
             ),
           ),
         )
